@@ -1,0 +1,7 @@
+<div 
+  *ngFor="let checkbox of checkboxes"
+  (change)="onSelected(checkbox)"
+>
+  <input type="checkbox" [value]="checkbox.value">
+  <label [for]="checkbox.value">{{checkbox.value}} {{checkbox.label}}</label>
+</div>

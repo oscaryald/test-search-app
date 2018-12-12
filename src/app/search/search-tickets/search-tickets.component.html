@@ -1,0 +1,19 @@
+<div *ngFor="let ticket of selectedTickets">
+  {{ticket.arrival_date}}
+  {{ticket.arrival_time}}
+  {{ticket.carrier}}
+  {{ticket.departure_date}}
+  {{ticket.departure_time}}
+  {{ticket.destination}}
+  {{ticket.destination_name}}
+  {{ticket.origin}}
+  {{ticket.origin_name}}
+  {{ticket.price}}
+  {{ticket.stops}}
+</div>
+<div>
+  <app-filters 
+    [tickets]="tickets"
+    (selected)="onSelected($event)"
+  ></app-filters>  
+</div>

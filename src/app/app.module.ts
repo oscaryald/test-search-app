@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { SearchModule } from './search/search.module';
 
-import { SearchTicketsService } from './shared/search-tickets.service';
+import { SearchTicketsService } from './shared/services/search-tickets.service';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';

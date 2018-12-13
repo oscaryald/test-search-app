@@ -5,15 +5,15 @@ import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
-    SearchTicketsComponent, 
+    SearchTicketsComponent,
     FiltersComponent,
   ],
   declarations: [
     SearchTicketsComponent,
-    FiltersComponent
+    FiltersComponent,
   ]
 })
 export class SearchModule { }

@@ -53,11 +53,6 @@ export class FiltersComponent implements OnInit {
             checked: false,
             label: 'пересадки'
           };
-          if (ticket.stops === 1) {
-            checkbox.label = 'пересадка';
-          } else if (ticket.stops === 0) {
-            checkbox.label = 'без пересадок';
-          }
           return checkbox;
         })
         .reduce((acc, curr) => {

@@ -1,12 +1,9 @@
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body{
-  background: #eee;
-}
-.main-content{
-  margin: 0 auto;
-  max-width: 1024px;
+.logo a{
+    text-indent: -9999px;
+    display: block;
+    width:103px;
+    height: 81px;
+    text-align: center;
+    margin: 50px auto;
+    background:url('../assets/img/logo.jpg') center no-repeat;
 }

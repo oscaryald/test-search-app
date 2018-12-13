@@ -1,28 +1,35 @@
-<h3>Валюта</h3>
-<div 
-  class="btn-group"
->
-  <button
-    *ngFor="let currency of currencies"
-    class="btn-item"
-    type="button"
-    [ngClass]="{'active': currency.checked}"
-    (click)="changeCurrency(currency)"
+<div class="filter">
+  <div class="filter__title">Валюта</div>
+  <div 
+    class="filter__btn-group"
   >
-    {{currency.label}}
-  </button>
-</div>
-<div 
-    *ngFor="let checkbox of checkboxes"
-    (click)="onSelected(checkbox)"
->
-    <label [for]="checkbox.value">
+    <button
+      *ngFor="let currency of currencies"
+      class="filter__btn-item"
+      type="button"
+      [ngClass]="{'active': currency.checked}"
+      (click)="changeCurrency(currency)"
+    >
+      {{currency.label}}
+    </button>
+  </div>
+  <div class="filter__title">Количество пересадок</div>
+  <div 
+      *ngFor="let checkbox of checkboxes"
+      (click)="onSelected(checkbox)"
+      class="filter__checkboxes"
+  >
+    <div class="filter__checkbox-item">
       <input 
         type="checkbox" 
         [value]="checkbox.value" 
         [name]="checkbox.value" 
         [checked]="checkbox.checked"
       >
-      {{checkbox.value === 'all' ?  '' : checkbox.value}} {{checkbox.label}}
-    </label>
+      <label [for]="checkbox.value">
+        {{checkbox.value === 'all' ?  checkbox.label : checkbox.value | stops}}
+      </label>
+      <span>только</span>
+    </div>
+  </div>
 </div>

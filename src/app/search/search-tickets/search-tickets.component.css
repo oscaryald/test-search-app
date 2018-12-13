@@ -1,10 +1,93 @@
 .wrapper{
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+}
+.main{
+  flex-grow: 1;
 }
 .left-side-bar{
   padding: 20px;
   background: #fff;
-  box-shadow: 0 0 7px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
   margin-right: 20px;
+  border-radius: 5px;
+}
+.ticket__item {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ticket__item:first-child{
+  margin: 0px 0 20px;
+}
+
+.ticket__item-left{
+  padding: 20px;
+  border-right: 1px solid #eee;
+  text-align: center;
+}
+
+.ticket__item-btn button{
+  padding: 7px 25px;
+  border:none;
+  border-bottom: 1px solid orangered;
+  color: white;
+  transition: all .3s;
+  display: inline-block;
+  background: #ff8124;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.ticket__item-right{
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  flex-grow: 1;
+}
+.arrival-stops{
+  color: #9da4a7;
+  position: absolute;
+  max-width: 110px;
+  width: 100%;
+  border-bottom: 1px solid #d2d5d6;
+  top: 30px;
+  left: 50%;
+  margin-left: -55px;
+  text-align: center;
+  padding-bottom: 2px;
+}
+.arrival-stops:after{
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 16px;
+  top: 12px;
+  right: -17px;
+  background: url('../../../assets/img/plain.jpg') center right no-repeat;
+}
+.arrival-item.last{
+  text-align: right;
+}
+.arrival__hours{
+  font-size: 35px;
+}
+.arrival__time{
+  color: #9da4a7;
+  font-size: 12px;
+}
+.origin{
+  font-weight: 600;
+  margin: 10px 0 0px;
+}
+.ticket__item-img{
+  background:#f2fcff url('../../../assets/img/airlines.jpg') center no-repeat;
+  width: 140px;
+  height: 45px;
+  text-align: center;
+  margin: 10px auto;
 }

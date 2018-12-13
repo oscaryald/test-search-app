@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Ticket } from '../../shared/interfaces/tickets.interface';
 import { SearchTicketsService } from '../../shared/services/search-tickets.service';
-import { Checkbox } from '../../shared/interfaces/checkboxes.interface';
+import { FilterItem } from '../../shared/interfaces/checkboxes.interface';
 
 @Component({
   selector: 'app-filters',
@@ -12,7 +12,7 @@ export class FiltersComponent implements OnInit {
 
   @Output() selected: EventEmitter<any> = new EventEmitter();
   @Output() selectedCurrency: EventEmitter<any> = new EventEmitter();
-  checkboxes: Checkbox[] = [
+  checkboxes: FilterItem[] = [
     {
       value: 'all',
       checked: false,
@@ -20,7 +20,7 @@ export class FiltersComponent implements OnInit {
     }
   ];
 
-  currencies: Checkbox[] = [
+  currencies: FilterItem[] = [
     {
       value: 1,
       checked: true,
@@ -44,7 +44,7 @@ export class FiltersComponent implements OnInit {
     this.searchTicketsService.getTicketsSubject$()
       .subscribe((tickets: Ticket[]) => {
         const obj = {};
-        const getChekboxes: Checkbox[] = tickets.map(ticket => {
+        const getChekboxes: FilterItem[] = tickets.map(ticket => {
           const checkbox = {
             value: ticket.stops,
             checked: false,
@@ -79,6 +79,8 @@ export class FiltersComponent implements OnInit {
       this.checkboxes.forEach(item => {
         item.checked = checkbox.checked;
       });
+    } else {
+      this.checkboxes[0].checked = false;
     }
     this.selected.emit(this.checkboxes);
   }

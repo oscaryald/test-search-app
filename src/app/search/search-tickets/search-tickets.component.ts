@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchTicketsService } from '../../shared/services/search-tickets.service';
 import { Ticket } from '../../shared/interfaces/tickets.interface';
-import { Checkbox } from '../../shared/interfaces/checkboxes.interface';
+import { FilterItem } from '../../shared/interfaces/checkboxes.interface';
 
 @Component({
   selector: 'app-search-tickets',
@@ -24,7 +24,7 @@ export class SearchTicketsComponent implements OnInit {
 
   onSelected(checkboxes) {
     this.selectedTickets = this.tickets.filter((ticket: Ticket) => {
-      return checkboxes.some((checkbox: Checkbox) => ticket.stops === checkbox.value && checkbox.checked);
+      return checkboxes.some((checkbox: FilterItem) => ticket.stops === checkbox.value && checkbox.checked);
     });
     if (!this.selectedTickets.length) {
       this.selectedTickets = this.tickets;

@@ -1,23 +1,28 @@
+<h3>Валюта</h3>
 <div 
-  *ngFor="let checkbox of checkboxes"
-  (click)="onSelected(checkbox)"
+  class="btn-group"
 >
-  <label [for]="checkbox.value">
-    <input 
-      type="checkbox" 
-      [value]="checkbox.value" 
-      [name]="checkbox.value" 
-      [checked]="checkbox.checked"
-    >
-    {{checkbox.value === 'all' ?  '' : checkbox.value}} {{checkbox.label}}
-  </label>
-</div>
-
-<div 
-  *ngFor="let currency of currencies"
->
-  <button 
-    type="button" 
+  <button
+    *ngFor="let currency of currencies"
+    class="btn-item"
+    type="button"
+    [ngClass]="{'active': currency.checked}"
     (click)="changeCurrency(currency)"
-  >{{currency.label}}</button>
+  >
+    {{currency.label}}
+  </button>
+</div>
+<div 
+    *ngFor="let checkbox of checkboxes"
+    (click)="onSelected(checkbox)"
+>
+    <label [for]="checkbox.value">
+      <input 
+        type="checkbox" 
+        [value]="checkbox.value" 
+        [name]="checkbox.value" 
+        [checked]="checkbox.checked"
+      >
+      {{checkbox.value === 'all' ?  '' : checkbox.value}} {{checkbox.label}}
+    </label>
 </div>

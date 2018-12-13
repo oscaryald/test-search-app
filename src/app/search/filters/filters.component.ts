@@ -25,16 +25,19 @@ export class FiltersComponent implements OnInit {
       value: 1,
       checked: true,
       label: 'RUB',
+      symbol: '₽',
     },
     {
       value: 0.015,
       checked: false,
       label: 'USD',
+      symbol: '$',
     },
     {
       value: 0.013,
       checked: false,
       label: 'EUR',
+      symbol: '€',
     },
   ];
 

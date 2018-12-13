@@ -1,19 +1,23 @@
-<div *ngFor="let ticket of selectedTickets">
-  {{ticket.arrival_date}}
-  {{ticket.arrival_time}}
-  {{ticket.carrier}}
-  {{ticket.departure_date}}
-  {{ticket.departure_time}}
-  {{ticket.destination}}
-  {{ticket.destination_name}}
-  {{ticket.origin}}
-  {{ticket.origin_name}}
-  {{ticket.price}}
-  {{ticket.stops}}
-</div>
-<div>
-  <app-filters
-    (selected)="onSelected($event)"
-    (selectedCurrency)="onSelectedCurrency($event)"
-  ></app-filters>  
+<div class="wrapper">
+    <div class="left-side-bar">  
+      <app-filters
+        (selected)="onSelected($event)"
+        (selectedCurrency)="onSelectedCurrency($event)"
+      ></app-filters>  
+    </div>
+    <div class="main">
+        <div *ngFor="let ticket of selectedTickets">
+          {{ticket.arrival_date}}
+          {{ticket.arrival_time}}
+          {{ticket.carrier}}
+          {{ticket.departure_date}}
+          {{ticket.departure_time}}
+          {{ticket.destination}}
+          {{ticket.destination_name}}
+          {{ticket.origin}}
+          {{ticket.origin_name}}
+          {{ticket.price}} {{currentCurrency}}
+          {{ticket.stops}}
+        </div>
+      </div>
 </div>

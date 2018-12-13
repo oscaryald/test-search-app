@@ -11,6 +11,8 @@ import { FilterItem } from '../../shared/interfaces/checkboxes.interface';
 export class SearchTicketsComponent implements OnInit {
   tickets: Ticket[] = [];
   selectedTickets: Ticket[] = [];
+  currentCurrency = '₽';
+
   constructor(private searchTicketsService: SearchTicketsService) { }
 
   ngOnInit() {
@@ -38,6 +40,7 @@ export class SearchTicketsComponent implements OnInit {
         price: Math.ceil(currency.value * ticket.price),
       };
     });
+    this.currentCurrency = currency.symbol;
   }
 
 }

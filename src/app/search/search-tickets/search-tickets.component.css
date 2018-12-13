@@ -1,0 +1,10 @@
+.wrapper{
+  display: flex;
+  justify-content: center;
+}
+.left-side-bar{
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 7px rgba(0, 0, 0, .5);
+  margin-right: 20px;
+}

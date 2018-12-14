@@ -48,12 +48,11 @@ export class FiltersComponent implements OnInit {
       .subscribe((tickets: Ticket[]) => {
         const obj = {};
         const getChekboxes: FilterItem[] = tickets.map(ticket => {
-          const checkbox = {
+          return {
             value: ticket.stops,
             checked: false,
-            label: 'пересадки'
+            label: 'пересадки',
           };
-          return checkbox;
         })
         .reduce((acc, curr) => {
           const val = curr.value;
@@ -69,7 +68,6 @@ export class FiltersComponent implements OnInit {
         this.checkboxes = [...this.checkboxes, ...getChekboxes];
       });
   }
-
 
   onSelected(checkbox) {
     checkbox.checked = !checkbox.checked;

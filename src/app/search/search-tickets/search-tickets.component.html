@@ -10,18 +10,18 @@
         *ngFor="let ticket of selectedTickets"
         class="ticket__item"
       >
-      <div class="ticket__item-left">
-        <div class="ticket__item-img">
+        <div class="ticket__item-left">
+            <div class="ticket__item-img">
+            </div>
+            <div class="ticket__item-btn">
+            <button type="button">
+                Купить 
+                <div> за {{ticket.price}} {{currentCurrency}}</div>
+            </button>
+            </div>
         </div>
-        <div class="ticket__item-btn">
-          <button type="button">
-            Купить 
-            <div> за {{ticket.price}} {{currentCurrency}}</div>
-          </button>
-        </div>
-      </div>
-      <div class="ticket__item-right">
-          <div class="arrival-item">
+        <div class="ticket__item-right">
+            <div class="arrival-item">
             <div class="arrival__hours">
                 {{ticket.arrival_time}}
             </div>
@@ -31,25 +31,22 @@
             <div class="arrival__time">
                 {{ticket.arrival_date | date: 'd MMM y, EEE' }}
             </div>
-          </div>
-          <div class="arrival-item last">
-              <div class="arrival__hours">
-                  {{ticket.departure_time}}
-              </div>
-              <div class="origin">
-                  {{ticket.destination_name}}, {{ticket.destination}} 
-              </div>
-              <div class="arrival__time">
-                  {{ticket.departure_date | date: 'd MMM y, EEE' }}
-              </div>
-          </div>
-          <div class="arrival-stops">
-              {{ticket.stops | stops}}
-          </div>
-      </div>
-        
-        <!-- {{ticket.carrier}} -->
-
+            </div>
+            <div class="arrival-item last">
+                <div class="arrival__hours">
+                    {{ticket.departure_time}}
+                </div>
+                <div class="origin">
+                    {{ticket.destination_name}}, {{ticket.destination}} 
+                </div>
+                <div class="arrival__time">
+                    {{ticket.departure_date | date: 'd MMM y, EEE' }}
+                </div>
+            </div>
+            <div class="arrival-stops">
+                {{ticket.stops | stops}}
+            </div>
+        </div>
       </div>
     </div>
 </div>
